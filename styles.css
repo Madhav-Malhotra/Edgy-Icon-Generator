@@ -1,0 +1,50 @@
+p, button, label {
+  font-size: 1.04rem;
+}
+
+.container {
+  margin-top: 2em;
+}
+
+.centre-text {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 700px;
+}
+
+.canvas {
+  margin-top: 2em;
+}
+
+.header, .controls { 
+  background-color: #eee;
+  padding: 1em;
+}
+
+.header {
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.controls {
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.controls h3 {
+  margin-top: 0;
+}
+
+.setting input {
+  margin-left: auto;
+}
+
+.setting {
+  display: flex;
+  max-width: 350px;
+  margin: auto;
+}
+
+button {
+  margin-top: 10px;
+}
