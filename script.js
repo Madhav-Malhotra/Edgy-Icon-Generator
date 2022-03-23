@@ -3,6 +3,7 @@ const canvas = document.getElementById("icon-canvas");
 var ctx = canvas.getContext("2d");
 
 const generate = document.getElementById("generate");
+const save = document.getElementById("save");
 const heightInput = document.getElementById("height");
 const widthInput = document.getElementById("width");
 const probInput = document.getElementById("probability");
@@ -17,6 +18,7 @@ let prob = probInput.value;
 let stroke = strokeInput.value;
 let bg = bgInput.value;
 let lineColor = lineColorInput.value;
+let downloadNum = 0;
 
 
 // ================ FUNCTIONS NEEDED =================== //
@@ -64,6 +66,11 @@ function draw(coordinates) {
 
 init();
 
+function saveIcon() {
+  canvas.toBlob((blob) => saveAs(blob, `icon${downloadNum}.png`));
+  downloadNum += 1;
+}
+
 // ================ EVENT LISTENERS FOR CONTROLS =================== //
 function updateSettings (setting, value) {
   if (setting == "height") height = value;
@@ -85,3 +92,4 @@ lineColorInput.oninput = (e) => updateSettings("lineColor", e.target.value);
 
 
 generate.onclick = init;
+save.onclick = saveIcon;
